@@ -10,21 +10,21 @@ def pdf_to_text():
         pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
         # need to install poppler for your os and add the path here
         poppler_path = r'C:\Program Files\poppler-0.68.0\bin'
-
+        # store the pdf file in a variable and spilt to pdf into pages
         pdf_file = "sample.pdf"
         pages = convert_from_path(pdf_file, 500, poppler_path=poppler_path)
         image_counter = 1
-
+        # converting the pdf pages into images
         for page in pages:
             filename = "page_" + str(image_counter) + ".jpg"
             page.save(filename, 'JPEG')
             image_counter = image_counter + 1
 
         filelimit = image_counter - 1
-
+        # naming the output file
         outfile = "output.txt"
         f = open(outfile, "a")
-
+        # extracting the text from the images and writing it in a text fiie
         for i in range(1, filelimit + 1):
             filename = "page_" + str(i) + ".jpg"
             img = Image.open(filename)

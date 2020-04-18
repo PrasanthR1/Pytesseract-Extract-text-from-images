@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This readme explains how to extract text from images and pdf:
 
 Pre-requests:
@@ -13,3 +14,7 @@ After installing required libs,need to install tesseract-ocr exe and poppler in 
 After installing all the required exe's
 
 add the installed path to your code.
+=======
+# Pytesseract-Extract-text-from-images
+This repo explains how to extract text from pdf and images using pytesseract
+>>>>>>> 2a59a5708263cfb74b6a8798362d9d80321b9b64
